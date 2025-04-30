@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speedstar Motors | Feedback</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="vehicles.html">Vehicles</a></li>
+            <li><a href="contact_us.html">Contact Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about_us.html">About Us</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+    </nav>
+</header>
+
+<img src="images/speedstar_motors.png" alt="banner" class="banner">
+
+<section class="container">
+    <div class="container-full">
+        <h1>We Value Your Feedback!</h1>
+        <p>At Speedstar Motors, your satisfaction is our top priority. Whether you've recently purchased a vehicle, visited our service center, or simply stopped by to say hello, we'd love to hear about your experience. Your feedback helps us continue to improve and provide the best possible service to our customers.</p>
+    </div>
+	</section>
+
+    <section class="container">
+	<div class="container-bottom">
+        <div class="feedback-text">
+            <h2>Why Your Feedback Matters</h2>
+            <ul>
+                <li><strong>Improve Our Services:</strong> Your insights help us identify areas where we can do better.</li>
+                <li><strong>Celebrate Our Team:</strong> Positive feedback lets us recognize our staff for their hard work and dedication.</li>
+                <li><strong>Enhance Your Experience:</strong> We use your suggestions to make every visit to Speedstar Motors even better.</li>
+            </ul>
+            <p>We appreciate your time and effort in sharing your thoughts with us. Your feedback is invaluable!</p>
+        </div>
+
+        <div class="feedback-form">
+            <h2>Share Your Thoughts</h2>
+            <p>Take a moment to let us know how we're doing. Whether it's a compliment, suggestion, or concern, we're all ears!</p>
+            <form action="/submit-contact-form" method="post" onsubmit="return validateform()">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="johndoe@example.com" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="(+267) 77777777" required>
+
+                <label for="type_of_feedback">Type of Feedback:</label>
+                <input type="text" id="type_of_feedback" name="type_of_feedback" placeholder="(e.g., Sales, Service, General Inquiry)" required>
+
+                <label for="feedback">Message:</label>
+                <textarea id="feedback" name="feedback" rows="5" placeholder="Your Message..." required></textarea>
+
+                <button type="submit">Submit Feedback</button>
+            </form>
+			<script>
+  function validateform() {
+    let isValid = true;
+
+    // Get form inputs
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let feedback = document.getElementById("feedback").value.trim();
+
+    // Get Error Elements
+    let nameError = document.getElementById("nameError");
+    let emailError = document.getElementById("emailError");
+    let feedbackError = document.getElementById("feedbackError");
+
+    // Reset Error Messages
+    nameError.textContent = "";
+    emailError.textContent = "";
+    feedbackError.textContent = "";
+
+    // Validate Name (Minimum 3 Characters)
+    if (name.length < 3) {
+      nameError.textContent = "Name must be at least 3 Characters long.";
+      isValid = false;
+    }
+
+    // Validate Email Basic Pattern Check
+    let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailPattern.test(email)) {
+      emailError.textContent = "Enter a Valid Email Address.";
+      isValid = false;
+    }
+
+    // Validate Feedback Minimum 10 Characters
+    if (feedback.length < 10) {
+      feedbackError.textContent = "Feedback must be at least 10 characters long.";
+      isValid = false;
+    }
+
+    return isValid;
+  }
+</script>
+        </div>
+    </div>
+</section>
+<footer>
+    <p>&copy; 2025 Speedstar Motors. All rights Reserved</p>
+    <p>Contact us: <a href="mailto:info@dummycardealership.com">info@dummycardealership.com</a></p>
+</footer>
+
+</body>
+</html>
